@@ -11,6 +11,7 @@ def translate():
     Input_text = request.form['text']
     dest_lang = request.form['language']
     translated_text = translator.translate(text=Input_text, dest=dest_lang).text
-    return render_template('index.html', translated_text=translated_text, languages=LANGUAGES)
+    return render_template('index.html', translated_text=translated_text, languages=LANGUAGES,input_text=Input_text,
+        selected_lang=dest_lang)
 if __name__ == '__main__':
     app.run(debug=True)
